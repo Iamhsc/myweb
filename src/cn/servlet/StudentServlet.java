@@ -76,7 +76,7 @@ public class StudentServlet extends HttpServlet {
 			if(pageNum!=null)
 				num=Integer.parseInt(pageNum);
 			int totalRecord=dao.getSize();
-			int pageSize=10;
+			int pageSize=5;
 			PageBean<Student> pageBean=new PageBean<>(num, pageSize, totalRecord);
 			System.out.println("start:"+pageBean.getStartIndex());
 			List<Student> list=dao.getByPage(pageBean.getStartIndex(),pageSize,totalRecord);

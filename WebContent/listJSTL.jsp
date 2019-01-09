@@ -32,7 +32,6 @@ table.stu-info td {
 <body>
 	<h3>学生信息列表页面JSTL</h3>
 	<hr>
-
 	<table class="stu-info">
 		<thead>
 			<tr>
@@ -100,7 +99,6 @@ table.stu-info td {
 			</c:forEach>
 			<a href="student?pageNum=${pageBean.pageNum+1}">下一页</a>
 		</c:if>
-
 		<%-- 如果当前页是最后一页，则只有上一页这个超链接显示，下一页没有 --%>
 		<c:if test="${pageBean.pageNum == pageBean.totalPage}">
 			<a href="student?pageNum=${pageBean.pageNum-1}">上一页</a>
