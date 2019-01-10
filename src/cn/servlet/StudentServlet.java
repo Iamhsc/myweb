@@ -1,16 +1,17 @@
 package cn.servlet;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import cn.dao.StudentDao;
+import cn.dao.IStudentDao;
+import cn.dao.StudentDaoImpl;
+import cn.db.ConnCreate;
 import cn.model.PageBean;
 import cn.model.Student;
 
@@ -21,14 +22,15 @@ import cn.model.Student;
 public class StudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	StudentDao dao=new StudentDao();
+	IStudentDao dao;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public StudentServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        Connection conn=ConnCreate.getConnection("jdbc:mysql://47.112.31.40:3306/student", "user1","user1");
+		dao=new StudentDaoImpl(conn);
     }
 
 	/**
@@ -79,7 +81,7 @@ public class StudentServlet extends HttpServlet {
 			int pageSize=5;
 			PageBean<Student> pageBean=new PageBean<>(num, pageSize, totalRecord);
 			System.out.println("start:"+pageBean.getStartIndex());
-			List<Student> list=dao.getByPage(pageBean.getStartIndex(),pageSize,totalRecord);
+			List<Student> list=dao.getByPage(pageBean.getStartIndex(),pageSize);
 			pageBean.setList(list);
 			request.setAttribute("pageBean", pageBean);
 			request.getRequestDispatcher("listJSTL.jsp").forward(request, response);
@@ -87,14 +89,15 @@ public class StudentServlet extends HttpServlet {
 	}
 	
 	private Student doForm(HttpServletRequest request){
-		Integer id=Integer.parseInt(request.getParameter("id"));
+		Integer id = 0;
+		Integer stu_id=Integer.parseInt(request.getParameter("stu_id"));
 		String name=request.getParameter("name");
-		String sex=request.getParameter("sex");
+		Byte sex=Byte.parseByte(request.getParameter("sex"));
 		String professional=request.getParameter("professional");
 		String[] hobby=request.getParameterValues("hobby");
 		String self=request.getParameter("self");
 		String photo=request.getParameter("photo");
-		Student stu=new Student(id, name, sex, professional, hobby, self, photo);
+		Student stu=new Student(id,stu_id, name, sex, professional, hobby, self, photo);
 		return stu;
 	}
 

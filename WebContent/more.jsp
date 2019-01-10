@@ -8,11 +8,11 @@
 </head>
 <body>
 <h3>学生个人信息页面</h3>
-学号：${stu.id }<br>
+学号：${stu.stu_id }<br>
 姓名：${stu.name }<br>
 性别：${stu.sex }<br>
 专业：${stu.professional }<br>
-爱好：${stu.hobbys }<br>
+爱好：${stu.hobbys}<br>
 简介：${stu.self }<br>
 照片：${stu.photo }<br>
 </body>

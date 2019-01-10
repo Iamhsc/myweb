@@ -48,12 +48,11 @@ table.stu-info td {
 		<tbody>
 			<c:forEach items="${pageBean.list}" var="item" varStatus="index">
 				<tr>
-					<td>${item.id}</td>
+					<td>${item.stu_id}</td>
 					<td>${item.name}</td>
 					<td>${item.sex}</td>
 					<td>${item.professional}</td>
-					<td><c:forEach items="${item.hobby}" var="hobby">${hobby} </c:forEach>
-					</td>
+					<td>${item.hobbys}</td>
 					<td width="200px;">${item.self}</td>
 					<td><img alt="" src="photo/${item.photo}" width="50" ></td>
 					<td>

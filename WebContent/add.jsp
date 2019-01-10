@@ -10,10 +10,11 @@
 	<h1>学生信息录入表单页面ALt+/</h1>
 	<hr>
 	<form method="post" action="student">
-		<input type="hidden" name="action" value="save"> 学号：<input
-			type="text" name="id"> <br> 姓名：<input type="text"
-			name="name"><br> 性别：<input type="radio" name="sex"
-			value="男">男 <input type="radio" name="sex" value="女">女<br>
+		<input type="hidden" name="action" value="save"> 
+		学号：<input type="text" name="stu_id"> <br> 
+		姓名：<input type="text" name="name"><br> 
+		性别：<input type="radio" name="sex" value="1">男 
+			  <input type="radio" name="sex" value="2">女<br>
 		专业：<select name="professional">
 			<option value="计算机科学与技术">计算机科学与技术</option>
 			<option value="网络工程技术">网络工程技术</option>
