@@ -9,9 +9,9 @@ public class Student {
 	private Byte sex;
 	private String professional;
 	private String[] hobby;
+	private String hobbys;
 	private String self;
 	private String photo;
-	private String hobbys;
 	
 	public Student() {
 		super();
@@ -19,10 +19,9 @@ public class Student {
 	
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", sex=" + sex
-				+ ", professional=" + professional + ", hobby="
-				+ Arrays.toString(hobby) + ", self=" + self + ", photo="
-				+ photo + "]";
+		return "Student [id=" + id + ", stu_id=" + stu_id + ", name=" + name + ", sex=" + sex + ", professional="
+				+ professional + ", hobby=" + Arrays.toString(hobby) + ", hobbys=" + hobbys + ", self=" + self
+				+ ", photo=" + photo + "]";
 	}
 
 	public Student(Integer id, Integer stu_id, String name, Byte sex, String professional, String[] hobby, String self,
