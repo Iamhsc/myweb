@@ -24,7 +24,7 @@ public class StudentDaoImplTest {
 	public void testSave() {
 		int res;
 		try {
-		for(int i=0;i<=100000;i++) {
+		for(int i=0;i<=20;i++) {
 			res = dao.save(new Student(null, 2005010+1, "linan"+i, (byte) 1, "计算机科学与技术"+i, new String[] { "编程", "运动" },
 					"hello world"+i, "2005001.jpg+1"));
 		}
