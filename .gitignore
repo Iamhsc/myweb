@@ -6,6 +6,7 @@
 
 # Package Files #
 *.jar
+!WebContent/WEB-INF/lib/*.jar
 *.war
 *.ear
 
