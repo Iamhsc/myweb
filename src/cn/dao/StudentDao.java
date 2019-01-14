@@ -5,6 +5,7 @@ import java.util.List;
 import cn.model.Student;
 
 public interface StudentDao {
+	public Student login(String stuID) throws SQLException;//登陆
 	public int save(Student student) throws SQLException;
 	public int update(Student student) throws SQLException;
 	public int delete(int id) throws SQLException;

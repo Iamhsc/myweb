@@ -6,6 +6,7 @@ public class Student {
 	private Integer id;
 	private Integer stu_id;
 	private String name;
+	private String password;
 	private Byte sex;
 	private String professional;
 	private String[] hobby;
@@ -59,6 +60,15 @@ public class Student {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public Byte getSex() {

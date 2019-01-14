@@ -3,7 +3,6 @@
   <component name="EclipseModuleManager">
     <conelement value="org.eclipse.jst.j2ee.internal.web.container" />
     <conelement value="org.eclipse.jst.j2ee.internal.module.container" />
-    <conelement value="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0" />
     <conelement value="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0 (2)" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />

@@ -72,6 +72,18 @@ public class StudentDaoImplTest {
 			e.printStackTrace();
 		}
 	}
+	
+	@Test
+	public void testlogin() {
+		Student student;
+		try {
+			student = dao.login("2018121908");
+			System.out.println(student);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	@Test
 	public void testGetAll() {

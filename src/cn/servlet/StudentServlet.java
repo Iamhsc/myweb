@@ -84,11 +84,11 @@ public class StudentServlet extends HttpServlet {
 					stu = dao.getById(id);
 					System.out.println(stu);
 					request.setAttribute("stu", stu);
+				request.getRequestDispatcher("more.jsp").forward(request, response);
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				request.getRequestDispatcher("more.jsp").forward(request, response);
 			} else if (action.equals("edit")) {
 				Integer id = Integer.parseInt(request.getParameter("id"));
 				Student stu;
@@ -135,5 +135,4 @@ public class StudentServlet extends HttpServlet {
 		Student stu = new Student(id, stu_id, name, sex, professional, hobby, self, photo);
 		return stu;
 	}
-
 }

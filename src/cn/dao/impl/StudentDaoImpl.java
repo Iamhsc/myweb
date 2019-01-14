@@ -72,6 +72,7 @@ public class StudentDaoImpl implements StudentDao {
 		}
 		return student;
 	}
+	
 
 	//获取全部数据
 	@Override
@@ -110,5 +111,17 @@ public class StudentDaoImpl implements StudentDao {
 			e.printStackTrace();
 		}
 		return lists;
+	}
+
+	@Override
+	public Student login(String stuID) throws SQLException {
+		String sql = "select id,stu_id,name,password from s_user where stu_id=?";
+		Student student = null;
+		try {
+			student = qr.query(sql, new BeanHandler<>(Student.class),Integer.parseInt(stuID));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return student;
 	}
 }
